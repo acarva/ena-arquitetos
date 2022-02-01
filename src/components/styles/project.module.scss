@@ -1,0 +1,55 @@
+.list {
+  display: flex;
+  align-items: flex-start;
+}
+
+.list a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.item {
+  height: auto;
+  border: black solid 1px;
+  width: 50%;
+  margin-right: 16px;
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.cover {
+  font-size: 0;
+}
+
+.cover img {
+  width: 100%;
+}
+
+.subtitle {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 0.4em;
+  width: 100%;
+}
+
+.subtitle span {
+  border-bottom: black solid 1px;
+  border-right: black solid 1px;
+  flex-grow: 1;
+  padding: 6px;
+}
+
+.subtitle:last-child span {
+  border-bottom: 0;
+}
+
+.subtitle span:last-child {
+  border-right: none;
+  flex-grow: 0;
+}
+
+.detail {
+
+}

@@ -1,21 +1,11 @@
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+  font-family: Arial;
+  font-size: 1.2em;
+}
+
 body {
   padding: 0;
   margin: 0;
-}
-
-.grid-row {
-  background-color: red;
-  min-height: 25px;
-}
-
-.grid-row .grid-left-cell {
-  background-color: blue;
-  width: 25px;
-  height: 100%;
-}
-
-.grid-row .grid-right-cell {
-  background-color: green;
-  width: 25px;
-  height: 100%;
+  min-height: 100%;
 }

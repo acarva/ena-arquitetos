@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+}
+
+.photo-section {
+  width: 300px;
+  flex-grow: 1;
+  font-size: 0.4em;
+}
+
+.photo {
+  max-width: 300px;
+  width: 300px;
+  border: black solid 1px;
+  margin-bottom: 16px;
+}
+
+.image {
+  font-size: 0;
+}
+
+.photo:last-child {
+  margin-bottom: 0;
+}
+
+.photo img {
+  width: 100%;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  padding: 6px;
+}
+
+.text {
+  margin-left: 16px;
+  font-size: 0.4em;
+}
+
+.text p {
+  margin-top: 0;
+}

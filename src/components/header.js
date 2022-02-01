@@ -3,14 +3,17 @@ import React from "react"
 import "../styles/index.scss"
 import * as headerStyles from "./styles/header.module.scss"
 
+import GridCell from "./grid/grid-cell";
+import GridRow from "./grid/grid-row";
+
 const Header = () => {
 
   return (
-    <header className={"grid-row"}>
-      <div className={"grid-left-cell"}></div>
-      <div className={"grid-cell"}></div>
-      <div className={"grid-right-cell"}></div>
-    </header>
+    <GridRow>
+      <GridCell>
+        <header className={headerStyles.header}></header>
+      </GridCell>
+    </GridRow>
   )
 }
 

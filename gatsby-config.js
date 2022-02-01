@@ -33,6 +33,16 @@ module.exports = {
           }
         ]
       }
+    },
+    'gatsby-plugin-image',
+    'gatsby-plugin-smoothscroll',
+    'gatsby-plugin-scroll-reveal',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
     }
   ],
 }

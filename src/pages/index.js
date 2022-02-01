@@ -1,20 +1,52 @@
 import React from "react"
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Layout from "../components/layout"
-import Header from "../components/header";
+import ProjectList from "../components/projectList"
+import Menu from "../components/menu"
+import AboutSection from "../components/aboutSection";
 
 const IndexPage = () => {
-  return (
-    <>
-      <Header></Header>
-      <Layout>
-        <div>
-          <h1>Welcome</h1>
-          <p><Link to="/contacts">Contact me</Link></p>
-        </div>
-      </Layout>
-    </>
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulProject(sort: {
+        fields: date,
+        order:DESC
+      }) {
+        edges {
+          node {
+            contentful_id,
+            title,
+            type,
+            date,            
+            area,
+            cover {
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
+    }`
   )
+
+  const projects = data.allContentfulProject.edges.map(
+    ({ node }) => ({
+        id: node.contentful_id,
+        name: node.title,
+        date: node.date,
+        type: node.type,
+        cover: node.cover.file.url
+      })
+  )
+
+  const projectList = <ProjectList projects={projects} />
+
+  return <Layout menu={<Menu />}
+                 firstSectionTitle={"Projetos"}
+                 firstSection={projectList}
+                 secondSectionTitle={"Estúdio"}
+                 secondSection={<AboutSection />} />
 }
 
 export default IndexPage

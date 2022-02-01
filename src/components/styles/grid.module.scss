@@ -1,0 +1,42 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+.grid.first-page {
+  min-height: 100%;
+}
+
+.grid:last-child .row:last-child .cell {
+  border-bottom: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row.main {
+  flex-grow: 1;
+}
+
+.cell {
+  padding: 16px;
+  display: flex;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.cell:last-child {
+  border-right: 0px;
+}
+
+.cell.empty {
+  padding: 8px;
+}
+
+.cell.center {
+  display: flex;
+  flex-grow: 1;
+}

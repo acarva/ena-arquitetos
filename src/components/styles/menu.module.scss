@@ -1,0 +1,17 @@
+.menu {
+  position: relative;
+}
+
+.menu-button {
+  text-transform: uppercase;
+  flex-basis: 0;
+  cursor: pointer;
+}
+
+.menu-button a {
+  width: 100%;
+}
+
+.menu-button.right {
+  text-align: right;
+}
