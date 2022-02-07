@@ -3,7 +3,6 @@ import React from "react"
 import "../styles/index.scss"
 import * as aboutStyles from "./styles/about.module.scss"
 import {graphql, useStaticQuery} from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 const AboutSection = () => {

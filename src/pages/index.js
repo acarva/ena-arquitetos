@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import Layout from "../components/layout"
 import ProjectList from "../components/projectList"
-import Menu from "../components/menu"
+import Menu from "../components/menu/menu"
 import AboutSection from "../components/aboutSection";
 
 const IndexPage = () => {

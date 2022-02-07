@@ -7,36 +7,27 @@ import GridRow from "./grid/grid-row"
 import GridMain from "./grid/grid-main"
 import GridCell from "./grid/grid-cell"
 import Grid from "./grid/grid"
-import Menu from "./menu"
+import Menu from "./menu/menu"
+import MenuButton from "./menu/menu.button";
+import Footer from "./footer";
 
-const Layout = ({ menu, firstSection, firstSectionTitle, secondSection, secondSectionTitle }) => {
-  const menuRef = useRef()
-  const [showMenu, setShowMenu] = useState(!!menu)
-
-  useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-    return () => {
-      window.removeEventListener("scroll", listenToScroll);
-    }
-  }, [showMenu])
-
-  const listenToScroll = () => {
-    setShowMenu(!!menu && menuRef.current.getBoundingClientRect().y > 0)
-  }
-
+const Layout = ({ firstSection, firstSectionTitle, secondSection, secondSectionTitle }) => {
   return (
     <>
       <Grid className={gridStyles.firstPage}>
         <GridRow><GridCell className={gridStyles.empty} /></GridRow>
         <Header />
-        {showMenu ?
-          <Menu  id={"first-section"} innerRef={menuRef}/> :
-          <GridRow  id={"first-section"} innerRef={menuRef}>
-            <GridCell>
+        <Menu id={"first-section"}>
+          {secondSection ?
+            <>
+              <MenuButton target={"#first-section"} optionName={firstSectionTitle} className={gridStyles.title}/>
+              <MenuButton target={"#second-section"} optionName={secondSectionTitle}  className={gridStyles.title}/>
+            </> :
+            <GridCell className={gridStyles.title}>
               {firstSectionTitle}
             </GridCell>
-          </GridRow>
-        }
+          }
+        </Menu>
         <GridMain>
           <GridCell>
             {firstSection}
@@ -46,11 +37,16 @@ const Layout = ({ menu, firstSection, firstSectionTitle, secondSection, secondSe
       {
         secondSection ?
           <Grid>
-            <GridRow><GridCell id={"second-section"}>{secondSectionTitle}</GridCell></GridRow>
+            <Menu id={"second-section"}>
+              <MenuButton target={"#second-section"} optionName={secondSectionTitle}/>
+            </Menu>
             <GridRow><GridCell>{secondSection}</GridCell></GridRow>
           </Grid> :
           null
       }
+      <Grid>
+        <Footer />
+      </Grid>
     </>
   )
 }

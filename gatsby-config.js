@@ -37,6 +37,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-smoothscroll',
     'gatsby-plugin-scroll-reveal',
+    'gatsby-plugin-transition-link',
     {
       resolve: 'gatsby-source-contentful',
       options: {
