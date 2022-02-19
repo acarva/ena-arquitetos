@@ -9,6 +9,7 @@ module.exports = {
     title: 'Ena Arquitetos',
     author: 'André Carvalho'
   },
+  pathPrefix: '/ena-arquitetos',
   plugins: [
     'gatsby-plugin-sass',
     {
